@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { FileDropModule } from 'ngx-file-drop/lib/ngx-drop';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: `
+    <ul>
+      <li><a routerLink = "/">Home</a></li>
+      <li><a routerLink = "/login">About</a></li>
+    </ul>
+    <router-outlet></router-outlet>
+  `
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Good Evening';
 }

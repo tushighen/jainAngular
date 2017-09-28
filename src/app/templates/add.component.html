@@ -1,0 +1,14 @@
+<div>
+  <form>
+    <label>Title:</label><br>
+    <input #title><br>
+    <p>{{title.value}}</p>
+    <label>Text:</label><br>
+    <input #text><br>
+    <p>{{text.value}}</p>
+    <label>Image Link:</label><br>
+    <input #imageLink><br>
+    <p>{{imageLink.value}}</p>
+    <button (click)="add(title.value, text.value, imageLink.value)">Add</button>
+  </form>
+</div>
