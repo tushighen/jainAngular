@@ -1,5 +1,5 @@
 <div>
-  <form>
+  <form method="post">
     <label>Title:</label><br>
     <input #title><br>
     <p>{{title.value}}</p>
@@ -12,3 +12,5 @@
     <button (click)="add(title.value, text.value, imageLink.value)">Add</button>
   </form>
 </div>
+<input #fileInput type="file"/>
+<button (click)="addFile()">Add</button>
