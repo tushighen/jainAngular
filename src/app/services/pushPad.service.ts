@@ -21,7 +21,9 @@ export class PushPadService {
     headers.append('Authorization', 'Token token="' + token + '"');
     headers.append('Content-Type', 'application/json;charset=utf-8');
     headers.append('Accept', 'application/json');
-    headers.append('Access-Control-Allow-Origin', 'https://pushpad.xyz');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Headers', 'Origin, Content-Type, X-Auth-Token');
+    headers.append('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS')
     console.log(token);
     return this.http.post('https://pushpad.xyz/projects/4505/notifications', json, {
       headers: headers

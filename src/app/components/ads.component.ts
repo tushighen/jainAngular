@@ -63,9 +63,9 @@ export class AdsComponent {
     this.adsService.insertAds(this.ads).subscribe(msg => {
       console.log(msg);
     });
-    // this.pushPadService.sendNotif(this.notification).subscribe(msg => {
-    //   console.log(msg);
-    // });
+    this.pushPadService.sendNotif(this.notification).subscribe(msg => {
+      console.log(msg);
+    });
     this.pushPadService.getAllAds();
   }
 }
