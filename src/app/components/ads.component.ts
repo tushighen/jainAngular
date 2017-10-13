@@ -13,6 +13,8 @@ import {NewProjectService} from "../services/newProject.service";
 
 export class AdsComponent {
 
+  private base64textString: String = '';
+
   constructor(private adsService: AdsService,
               private uploadService: UploadService,
               private pushPadService: PushPadService,
@@ -42,11 +44,18 @@ export class AdsComponent {
     let fi = this.icon.nativeElement;
     if (fi.files && fi.files[0]) {
       let icon = fi.files[0];
-      var iconUrl = "data:image/png;base64,";
-      iconUrl += this.newProjectService.convertImage(icon).subscribe(res => {
-        console.log(res);
-      });
+      var reader = new FileReader();
+      // console.log(icon.getName());
+      reader.onload = this._handleReaderLoaded.bind(this);
+
+      reader.readAsBinaryString(icon);
     }
+  }
+
+  _handleReaderLoaded(readerEvt) {
+    var binaryString = readerEvt.target.result;
+    this.base64textString = btoa(binaryString);
+    console.log(btoa(binaryString));
   }
 
   add(title: String, text: String, imageLink: String) {

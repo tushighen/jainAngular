@@ -1,5 +1,5 @@
 <div>
-  <form method="post">
+  <form action="add.component.html" method="post">
     <label>Title:</label><br>
     <input #title><br>
     <p>{{title.value}}</p>
@@ -9,11 +9,11 @@
     <label>Image Link:</label><br>
     <input #imageLink><br>
     <p>{{imageLink.value}}</p>
-    <button (click)="add(title.value, text.value, imageLink.value)">Add</button>
+    <button (click)="add(title.value, text.value, imageLink.value)" type="submit">Add</button>
   </form>
 </div>
 <input #fileInput type="file"/>
-<button (click)="addFile()">Add</button>
+<button (click)="addFile()" type="submit">Add</button>
 <button id="pushpad-button">Subscribe</button>
 
 
