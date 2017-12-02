@@ -12,6 +12,7 @@ export class UploadService {
   uploadImage(fileToUpload: any) {
     let input = new FormData();
     input.append('file', fileToUpload);
-    return this.http.post('http://localhost:8080/api/upload', input);
+    return this.http.post('http://localhost:8080/api/upload', input)
+      .map(res => res.text());
   }
 }

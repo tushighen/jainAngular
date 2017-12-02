@@ -12,7 +12,7 @@
     <button (click)="add(title.value, text.value, imageLink.value)" type="submit">Add</button>
   </form>
 </div>
-<input #fileInput type="file"/>
+<input #fileInput type="file" (change)="addFile()"/>
 <button (click)="addFile()" type="submit">Add</button>
 <button id="pushpad-button">Subscribe</button>
 

@@ -29,13 +29,14 @@ export class AdsComponent {
   private body: Body;
   private notification: Notification;
   private project: Project;
+  private hi: Hi;
 
   addFile(): void {
     let fi = this.fileInput.nativeElement;
     if (fi.files && fi.files[0]) {
       let fileToUpload = fi.files[0];
       this.uploadService.uploadImage(fileToUpload).subscribe(res => {
-        console.log(res);
+        console.log(res.text());
       });
     }
   }
@@ -121,4 +122,8 @@ interface Project {
   name: String;
   website: String;
   icon_data: String;
+}
+
+interface Hi {
+  hi: string;
 }
